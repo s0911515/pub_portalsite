@@ -11,6 +11,25 @@ h3 {
 }
 
 /* ========================================
+  ローディング画面
+======================================== */
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: antiquewhite;
+  z-index: 555;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader img {
+  display: none;
+}
+
+/* ========================================
   スライドショー（slick）
 ======================================== */
 .slick-dots {

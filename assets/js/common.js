@@ -1,4 +1,20 @@
 /**
+ * ローディングアニメーション用の関数
+ */
+// 表示
+function show_txt() {
+  $('.loader img').fadeIn(400);
+}
+// 非表示
+function hide_txt() {
+  $('.loader img').fadeOut(400);
+}
+// ローダー終了
+function end_loader() {
+  $('.loader').fadeOut(800);
+}
+
+/**
  * テキストを１文字ずつ表示するアニメーション用の関数
  */
  function EachTextAnimeControl() {
@@ -53,6 +69,17 @@
  */ 
  $(window).on('load', function () {
 
+  // ローディングアニメーション
+  setTimeout(function () {
+    show_txt();
+  }, 0)
+  setTimeout(function () {
+    hide_txt();
+  }, 2000)
+  setTimeout(function () {
+    end_loader();
+  }, 2500)
+  
   // テキストを１文字ずつ表示するアニメーション
   var elements = $("section .body p");
   elements.each(function () {
