@@ -1,0 +1,303 @@
+/* ========================================
+  テスト用
+======================================== */
+/* header {
+  background-color: lightblue;
+}
+.main-wrapper {
+  background-color: lightcoral;
+}
+section.top {
+  background-color: lightgoldenrodyellow;
+}
+section.about {
+  background-color: lightgreen;
+}
+section.members {
+  background-color: lightpink;
+}
+section.contents {
+  background-color: lightseagreen;
+}
+footer {
+  background-color: lightsalmon;
+} */
+
+/* ========================================
+  共通
+======================================== */
+body {
+  background-color: antiquewhite;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+h3 {
+  font-family: 'DynaPuff', cursive;
+  font-size: 2em;
+}
+
+/* ========================================
+  スライドショー（slick）
+======================================== */
+.slick-dots {
+  bottom: -30px;
+  right: 15px;
+  width: auto;
+}
+.slick-dots li button:before {
+	font-size: 20px;
+  opacity: .5;
+  color: lightsalmon;
+}
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: lightsalmon;
+}
+
+/* ========================================
+  ヘッダーメニュー
+======================================== */
+header {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  z-index: 2;
+  font-family: 'DynaPuff', cursive;
+  color: white;
+  transition: 
+    color .2s,
+    background-color .2s,
+    backdrop-filter .2s;
+}
+header.scrolled {
+  color: black;
+  background-color: #faebd7bf;
+  backdrop-filter: blur(10px);
+}
+.header_inner {
+  height: 100%;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_logo {
+  font-size: 3rem;
+}
+.header_nav-items {
+  display: flex;
+}
+.header_nav-item:not(:last-child) {
+  margin-right: 1em;
+}
+
+/* ========================================
+  Topセクション
+======================================== */
+section.top {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/assets/img/top.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+section.top span {
+  font-family: 'Pacifico', cursive;
+  font-size: 10rem;
+  color: white;
+  margin-bottom: 100px;
+}
+
+/* ========================================
+  セクション（Top以外共通）
+======================================== */
+section:not(.top) {
+  max-width: 1710px;
+  padding: 120px 95px 0;
+}
+section .title {
+  margin-bottom: 1em;
+}
+section .body p {
+  max-width: 1200px;
+  font-family: 'Yomogi', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+section .body p span {
+  opacity: 0;
+}
+section .body p.appeartext span {
+  animation:text_anime_on 1s ease-out forwards;
+}
+@keyframes text_anime_on {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+.slider-wrapper {
+  position: relative;
+  padding-top: 40px;
+}
+.slider img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+}
+.headline {
+  display: flex;
+  flex-direction: row-reverse;
+  color: lightsalmon;
+}
+.headline_en {
+  margin-left: 15px;
+}
+.headline_en span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  writing-mode: vertical-rl;
+}
+.headline_ja {
+  width: 82px;
+  margin-left: 32px;
+}
+.headline_ja span {
+  padding: 20px 23px;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  writing-mode: vertical-rl;
+  color: white;
+  background-color: lightsalmon;
+}
+.headline_lead p {
+  font-size: 1rem;
+  line-height: 2.25;
+  writing-mode: vertical-rl;
+}
+
+/* ========================================
+  Aboutセクション
+======================================== */
+.about .headline {
+  position: absolute;
+  top: 10%;
+  right: 2.5%;
+}
+.about .headline_en span {
+  color: white;
+}
+
+/* ========================================
+  Membersセクション
+======================================== */
+.member {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 115px;
+}
+.member.is-left {
+  flex-direction: row-reverse;
+}
+.member .headline-wrapper {
+  margin: 0 auto;
+}
+.member .headline {
+  position: relative;
+  justify-content: center;
+  display: flex;
+}
+.slideinAnime {
+  opacity: 0;
+}
+.slideinAnimeDownUp {
+  animation-name:slideTextY100;
+  animation-duration:0.8s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+@keyframes slideTextY100 {
+  from {
+    transform: translateY(100%);/* 要素を上の枠外に移動*/
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);/* 要素を元の位置に移動*/
+    opacity: 1;
+  }
+}
+.slideinAnimeUpDown {
+  animation-name:slideTextY-100;
+  animation-duration:2s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+@keyframes slideTextY-100 {
+  from {
+    transform: translateY(-100%);/* 要素を下の枠外に移動*/
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);/* 要素を元の位置に移動*/
+    opacity: 1;
+  }
+}
+.member .image {
+  position: relative;
+  width: 70%;
+  height: 560px;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* ========================================
+  Contentsセクション
+======================================== */
+.selection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5.6vh 2.8vw;
+  margin: 152px auto 0;
+  max-width: 1160px;
+  text-align: center;
+}
+.selection_image {
+  width: 560px;
+  height: 450px;
+  border: 1px solid black;
+  margin: 24px auto;
+}
+.selection_button {
+  width: 380px;
+  margin: 24px auto;
+  font-family: 'Yomogi', sans-serif;
+  background-color: lightsalmon;
+}
+.selection_button span {
+  width: 100%;
+  padding: 20px;
+  font-size: 22px;
+  line-height: 40px;
+  display: inline-block;
+  letter-spacing: .15em;
+  border: 1px solid black;
+  background-color: white;
+}
+.selection_link-wrap:hover .selection_button span {
+  transform: translateX(-4px) translateY(-4px);
+}
+
+/* ========================================
+  フッター
+======================================== */
+footer {
+  margin-top: 120px;
+  background-color: lightsalmon;
+  text-align: center;
+  padding: 20px 0;
+  color: white;
+  font-size: 1.1rem;
+  letter-spacing: .05em;
+}
